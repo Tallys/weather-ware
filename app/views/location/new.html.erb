@@ -1,0 +1,16 @@
+<h1> Pick your location, Tim! </h1>
+<%= form_for :location, url: location_index_path do |f| %>
+  <p>
+    <%= f.label :City %><br>
+    <%= f.text_field :city %>
+  </p>
+ 
+  <p>
+    <%= f.label :State %><br>
+    <%= select_tag :state, options_for_select(us_states) %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
