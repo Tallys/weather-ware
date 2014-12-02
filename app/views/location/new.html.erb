@@ -7,7 +7,7 @@
  
   <p>
     <%= f.label :State %><br>
-    <%= select_tag :state, options_for_select(us_states) %>
+    <%= f.select :state, options_for_select(us_states, "TX") %>
   </p>
  
   <p>
