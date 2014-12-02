@@ -1,26 +1,15 @@
-<h1> Showing weather for: </h1>
-
-<p>
-	<strong>City:</strong>
-	<%= @location.city %>
-</p>
-
-<p>
-	<strong>State</strong>
-	<%= @location.state %>
-	
-</p>
+<h1> The weather for <%= @location.city %>, <%= @location.state %> is: </h1>
 
 
 <h2>What to Wear?</h2>
 <% @location.comments.each do |comment| %>
 <p>
-	<strong>Your Name:</strong>
+	<strong>Name:</strong>
 	<%= comment.commenter %>
 </p>
 
 <p>
-	<strong>What should I wear?:</strong>
+	<strong>Comment:</strong>
 	<%= comment.body %>
 </p>
 <% end %>
@@ -28,15 +17,15 @@
 <h2>Add a comment:</h2>
 <%= form_for([@location, @location.comments.build]) do |f| %>
 <p>
-	<%= f.label :commenter %><br>
+	<%= f.label :name %><br>
 	<%= f.text_field :commenter %>
 </p>
 <p>
-	<%= f.label :body %><br>
+	<%= f.label :comment %><br>
 	<%= f.text_area :body %>
 </p>
 <p>
-	<%= f.submit %>
+	<%= f.submit 'Submit' %>
 </p>
 <% end %>
 
