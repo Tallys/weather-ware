@@ -1,6 +1,6 @@
 class LocationController < ApplicationController
 
-	def new
+	def search
 		@location = Location.new
 	end
 
