@@ -1,6 +1,6 @@
 <h1> Pick your location, Tim! </h1>
 
-<%= form_for :post do |f| %>
+<%= form_for :location do |f| %>
    <% if @location.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@location.errors.count, "error") %> prohibited
@@ -26,4 +26,12 @@
     <%= f.submit 'Search' %>
   </p>
 <% end %>
+
+<h1> The weather for <%= @location.city %>, <%= @location.state %> is: </h1>
+
+<h2>What are people here saying?</h2>
+
+<%= render @location.comments %>
+
+<%= render 'comments/form' %>
 
