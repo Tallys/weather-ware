@@ -7,7 +7,7 @@ class LocationController < ApplicationController
 	def create
 		@location = Location.find_or_create_by(location_params)
 		if @location.save
-			redirect_to @location
+			render 'show'
 		else 
 			render 'new'
 		end
@@ -17,7 +17,7 @@ class LocationController < ApplicationController
 		@location = Location.find(params[:id])
 	end
 
-	private
+	private #only allow city and state parameters
 	def location_params
 		params.require(:location).permit(:city, :state)
 	end
