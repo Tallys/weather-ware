@@ -1,0 +1,17 @@
+<h2>Add a comment:</h2>
+<%= form_for([@location, @location.comments.build]) do |f| %>
+<p>
+	<%= f.label :name %><br>
+	<%= f.text_field :commenter %>
+</p>
+<p>
+	<%= f.label :comment %><br>
+	<%= f.text_area :body %>
+</p>
+<p>
+	<%= f.submit 'Submit' %>
+</p>
+<% end %>
+
+
+

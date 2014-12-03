@@ -2,32 +2,7 @@
 
 
 <h2>What are people here saying?</h2>
-<% @location.comments.each do |comment| %>
-<p>
-	<strong>Name:</strong>
-	<%= comment.commenter %>
-</p>
 
-<p>
-	<strong>Comment:</strong>
-	<%= comment.body %>
-</p>
-<% end %>
+<%= render @location.comments %>
 
-<h2>Add a comment:</h2>
-<%= form_for([@location, @location.comments.build]) do |f| %>
-<p>
-	<%= f.label :name %><br>
-	<%= f.text_field :commenter %>
-</p>
-<p>
-	<%= f.label :comment %><br>
-	<%= f.text_area :body %>
-</p>
-<p>
-	<%= f.submit 'Submit' %>
-</p>
-<% end %>
-
-
-
+<%= render 'comments/form' %>
