@@ -1,5 +1,5 @@
 <h2>Add a comment:</h2>
-<%= form_for "submit" do |f| %>
+<%= form_for :comment, url: comment_url(id: @location) do |f| %>
 <p>
 	<%= f.label :name %><br>
 	<%= f.text_field :commenter %>
