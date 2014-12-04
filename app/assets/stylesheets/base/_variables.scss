@@ -70,18 +70,27 @@ $header-line-height: $base-font-size * 1.25;
 $base-border-radius: em(3);
 
 // Colors
+$light-blue: #89b6b7;
+$dark-blue: #5f838a;
 $blue: #4dabdf;
 $white : #fff;
 $dark-gray: #222;
 $medium-gray: #999;
 $light-gray: #DDD;
+$mauve: #55404f;
+$yellow: #fdd68b;
 
-$primary-color: #8db3b4;
-$primary-color-dark: #204758;
+// Color Scheme
+
+$primary-color: $light-blue;
+$primary-color-dark: $dark-blue;
+$secondary-color: $mauve;
+$accent-color: $yellow;
+
+
 $secondary-accent-color: #f22933;
 $background: desaturate(lighten($blue, 31), 7);
 $base-accent-color: $blue;
 $base-border-color: $light-gray;
 $darker-background: darken($background, 6);
 
-$accent-color: $blue;
