@@ -4,8 +4,19 @@ header {
 	background-position: center, center;
 	background-repeat: no-repeat;
 	text-align:center;
-	padding-bottom:5em;
-	padding-top:3em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+
+	@include media($mediumish) {
+		padding-bottom:4em;
+		padding-top:2em;
+	}
+
+	@include media($largish) {
+		padding-bottom:5em;
+		padding-top:3em;
+		margin-bottom: 1em;
+	}
 
 	hr { 
 		text-align:center;
@@ -16,8 +27,8 @@ header {
 	}
 
 	img {
-		max-width: 200px;
-		padding: 1.5em;
+		max-width: 150px;
+		padding: 1.2em;
 		opacity: .9	;
 		@include media($mediumish) {
 			max-width: 220px;
@@ -25,7 +36,7 @@ header {
 		}
 		@include media($largish) {
 			font-size: 1.3em;
-			max-width: 220px;
+			max-width: 250px;
 			padding: 1em;
 		}
 	}
@@ -39,8 +50,8 @@ header {
 		@include media($largish) {
 			font-size: 1.3em;
 		}
-
 	}
+	
 	a {
 		text-decoration:none;
 		.main-title {

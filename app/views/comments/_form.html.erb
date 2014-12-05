@@ -1,17 +1,16 @@
-<h2>Add a comment:</h2>
-<%= form_for :comment, url: comment_url(id: @location) do |f| %>
-<p>
-	<%= f.label :name %><br>
-	<%= f.text_field :commenter %>
-</p>
-<p>
-	<%= f.label :comment %><br>
-	<%= f.text_area :body %>
-</p>
-<p>
-	<%= f.submit 'Submit' %>
-</p>
-<% end %>
-
-
-
+<div class = "comment-form">
+	<h1>weather wear?</h1>
+	<%= form_for :comment, url: comment_url(id: @location) do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :commenter %>
+	</p>
+	<p>
+		<%= f.label :comment %><br>
+		<%= f.text_area :body %>
+	</p>
+	<p class= "submit">
+		<%= f.submit 'Submit' %>
+	</p>
+	<% end %>
+</div>

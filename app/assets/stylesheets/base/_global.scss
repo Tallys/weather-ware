@@ -1,7 +1,13 @@
 body {
 	background: $white;
+	@include background-image(url("/images/tile4light.jpg"));
+	background-position: center, center;
+	background-repeat: repeat;
 }
 
+p {
+	color: $mauve;
+}
 
 .wrapper {
 	@include outer-container;
@@ -19,34 +25,9 @@ body {
 	display: inline;
 }
 
-.main-info {
-	padding: 1em;
-	padding-top: 2em;
-	padding-bottom:2em;
-	text-align:center;
+.api-result {
 
-	@include media($largish) {
-		padding-top: 3em;
-		padding-bottom: 3em;
-		padding-left: 0em;
-	}
-
-	h2 {
-		font-size: 1.3em;
-		font-size: 5vw;
-
-		@include media ($mediumish) {
-			font-size: 1.6em;
-			font-size: 5vw;
-		}
-		@include media($largish) {
-			font-size: 3em;
-			text-align:left;
-			padding-left:.5em;
-		}
-	}
+	height: 250px;
 	
-	strong {
-		color: $accent-color;
-	}
+	background-color: $primary-color-dark;
 }
