@@ -14,3 +14,50 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// $(document).ready(function(){
+//     $(".submit-form").click(function() {
+//     var addComment = $('form_for[:comment]').val(); 
+//     $('.comment-display').append('<p>' + toAdd + '</p>');
+//     });
+// });
+
+
+$(document).ready(function() {
+	$(".search-form").on("submit", function (e) {
+		e.preventDefault();
+		console.log(e);
+		var city = $("#location_city").val();
+		var state = $("#location_state").val();
+	})
+})
+
+
+// $(document).ready(function() {
+//     $('thingToTouch').event(function() {
+//         $('thingToAffect').effect();
+//     });
+// });
+
+
+
+// Throw this in the controller: 
+//     respond_to do |format|
+//       format.html
+//       format.json {render json: @weather}
+
+
+// In the location#submit controller: 
+    // respond_to do |format|
+    //   if @weather.save
+    //     format.html { redirect_to root_path }
+    //     format.json { render action: 'show', status: :created, location: @weather }
+    //     format.js {}
+    //   else
+    //     format.html {
+    //       flash.now[:notice]="save process couldn't be completed!"
+    //       render :new
+    //     }
+    //     format.json { render json: @weather.errors, status: :unprocessable_entity }
+    //   end
+    // end

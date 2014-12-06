@@ -43,6 +43,9 @@
 	}
 }
 
+.comment-display {
+	@extend .comment-form;
+}
 
 .location-form {
 	
