@@ -8,13 +8,11 @@ fieldset {
 input,
 label,
 select {
-  display: block;
   font-family: $form-font-family;
   font-size: $form-font-size;
 }
 
 label {
-  font-weight: bold;
   margin-bottom: $base-line-height / 4;
 
   &.required:after {
@@ -38,8 +36,8 @@ select[multiple=multiple] {
   font-family: $form-font-family;
   font-size: $form-font-size;
   margin-bottom: $base-line-height / 2;
-  padding: ($base-line-height / 3) ($base-line-height / 3);
-  width: 100%;
+  padding: ($base-line-height / 5) ($base-line-height / 4);
+  // width: 100%;
 
   &:hover {
     border-color: $form-border-color-hover;

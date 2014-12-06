@@ -1,42 +1,11 @@
 <div class = "wrapper">
-  <div class = "location-page"> 
-
-    <div class= "location-form">
-      <h1> weather where? </h1>
-
-      <%= form_for :location, url: submit_url, html: {class: 'search-form'} do |f| %>
-      <% if @location.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@location.errors.count, "error") %> prohibited
-          this location from being saved:</h2>
-          <ul>
-            <% @location.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-        <% end %>
-        <p class = "city-input">
-          <%= f.label :City %>
-          <%= f.text_field :city %>
-        </p>
-
-        <p class= "state-input">
-          <%= f.label :State %>
-          <%= f.select :state, options_for_select(us_states, "TX") %>
-        </p>
-
-        <p class= "submit">
-          <%= f.submit 'Search' %>
-        </p>
-        <% end %>
-      </div>
+  <div class = "comment-page"> 
 
       <% if Location.exists?(@location) %>
       <div class = "api-result">
         <h1> The weather for <%= @location.city %>, <%= @location.state %> is: </h1>
       </div>
-      
+
       <h2>what are people wearing in this weather?</h2>
 
       <%= render @location.comments %>

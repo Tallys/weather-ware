@@ -1,11 +1,20 @@
 .location-page {
-	background-color: $primary-color-light;
-	@include span-columns(12);
-	margin-top: 3em;
-	padding-top: 1em;
+	background-color: darken($primary-color-light, 11);
+	@include linear-gradient(190deg, lighten($primary-color-light, 11), $primary-color);
+	margin-top: 1em;
+	padding-top: .5em;
+	
+	@include media($mediumish) {
+		@include span-columns(7);
+		@include shift(2.5);
+	}
 
+	@include media($largish) {
+		@include span-columns(6);
+		@include shift(3);
+	}
 	h1 {
-		font-size: 2em;
+		font-size: 1.5em;
 		color: $secondary-color;
 		text-align:center;
 
@@ -56,13 +65,13 @@
 
 .city-input {
 	
-	display:inline;
-	text-align:left;
+	display:block;
+	text-align:center;
 }
 
 .state-input {
-	display:inline;
-	text-align:left;
+	display:block;
+	text-align:center;
 }
 
 .submit {
