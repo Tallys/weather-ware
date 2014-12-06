@@ -33,10 +33,10 @@
       </div>
 
       <% if Location.exists?(@location) %>
-
       <div class = "api-result">
-      <h1> The weather for <%= @location.city %>, <%= @location.state %> is: </h1>
+        <h1> The weather for <%= @location.city %>, <%= @location.state %> is: </h1>
       </div>
+      
       <h2>what are people wearing in this weather?</h2>
 
       <%= render @location.comments %>

@@ -5,6 +5,10 @@ class LocationController < ApplicationController
 			@location = Location.find(params[:location])
 		else
 			@location = Location.new
+			respond_to do |format|
+				format.html
+				format.json {render json: @location}
+			end
 		end
 	end
 

@@ -15,14 +15,15 @@
 //= require turbolinks
 //= require_tree .
 
-// $(document).ready(function(){
-//     $(".submit-form").click(function() {
-//     var addComment = $('form_for[:comment]').val(); 
-//     $('.comment-display').append('<p>' + toAdd + '</p>');
+
+// $(document).ready(function() {
+//     $('thingToTouch').event(function() {
+//         $('thingToAffect').effect();
 //     });
 // });
 
 
+//takes the form, stops the form from the default submit action, and collects values from the form.
 $(document).ready(function() {
 	$(".search-form").on("submit", function (e) {
 		e.preventDefault();
@@ -33,18 +34,11 @@ $(document).ready(function() {
 })
 
 
-// $(document).ready(function() {
-//     $('thingToTouch').event(function() {
-//         $('thingToAffect').effect();
-//     });
-// });
-
-
 
 // Throw this in the controller: 
 //     respond_to do |format|
 //       format.html
-//       format.json {render json: @weather}
+//       format.json {render json: @location}
 
 
 // In the location#submit controller: 
