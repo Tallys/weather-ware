@@ -30,28 +30,28 @@ $(document).ready(function() {
 		console.log(e);
 		var city = $("#location_city").val();
 		var state = $("#location_state").val();
+		$.ajax({
+			url : "http://api.wunderground.com/api/9f9665f04fbd9ca7/geolookup/conditions/q/"+state+"/"+city+".json",
+			dataType : "jsonp",
+			success : function(parsed_json) {
+				var location = parsed_json['location']['city'];
+				var temp_f = parsed_json['current_observation']['temp_f'];
+				alert("Current temperature in " + location + " is: " + temp_f);
+			}
+		})
 	})
-})
+});
 
 
 
-// Throw this in the controller: 
-//     respond_to do |format|
-//       format.html
-//       format.json {render json: @location}
-
-
-// In the location#submit controller: 
-    // respond_to do |format|
-    //   if @weather.save
-    //     format.html { redirect_to root_path }
-    //     format.json { render action: 'show', status: :created, location: @weather }
-    //     format.js {}
-    //   else
-    //     format.html {
-    //       flash.now[:notice]="save process couldn't be completed!"
-    //       render :new
-    //     }
-    //     format.json { render json: @weather.errors, status: :unprocessable_entity }
-    //   end
-    // end
+// jQuery(document).ready(function($) {
+// 	$.ajax({
+// 		url : "http://api.wunderground.com/api/9f9665f04fbd9ca7/geolookup/conditions/q/"+state+"/"+city+".json",
+// 		dataType : "jsonp",
+// 		success : function(parsed_json) {
+// 			var location = parsed_json['location']['city'];
+// 			var temp_f = parsed_json['current_observation']['temp_f'];
+// 			alert("Current temperature in " + location + " is: " + temp_f);
+// 		}
+// 	});
+// });
