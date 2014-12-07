@@ -37,6 +37,10 @@
 		@include media ($largish) {
 			margin-right: 6em;
 			margin-left: 6em;
+			margin-bottom: 3em;
+		}
+
+		p {
 			margin-bottom: 1em;
 		}
 	}

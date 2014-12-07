@@ -35,7 +35,7 @@ $(document).ready(function() {
 						console.log("i did it");
 						$( "<h1>" ).text("Current temperature in " + location + " is: " + temp_f).appendTo( ".api-result" );
 						$(".api-result").removeClass("hide");
-						$(".api-result").append($(data).html());
+						$(".api-result").append($(data));
 					}
 				});
 			}

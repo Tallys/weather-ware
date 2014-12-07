@@ -1,5 +1,5 @@
-<div class= "comment-display">
 	<% @location.comments.each do |comment| %>
+<div class= "comment-display">
 	<p>
 		<strong>Name:</strong>
 		<%= comment.commenter %>
@@ -9,8 +9,8 @@
 		<strong>Comment:</strong>
 		<%= comment.body %>
 	</p>
-<% end %>
 </div>
+<% end %>
 
 
 <div class = "comment-form">
