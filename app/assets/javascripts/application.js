@@ -35,9 +35,20 @@ $(document).ready(function() {
 			success : function(parsed_json) {
 				var location = parsed_json['location']['city'];
 				var temp_f = parsed_json['current_observation']['temp_f'];
-				alert("Current temperature in " + location + " is: " + temp_f);
+				$( "<h1>" ).text("Current temperature in " + location + " is: " + temp_f).appendTo( "body" );
 			}
 		})
+
+		// %.ajax ({
+		// 	url: '/',
+		// 	type: "POST",
+		// 	dataType: "json",
+		// 	success: function(parsed_json) {
+		// 		$( "<h1>" ).text( json.title ).appendTo( "body" );
+		// 		$( "<div class='content'>").html( json.html ).appendTo( "body" )
+		// 	}
+
+		// })
 	})
 });
 
