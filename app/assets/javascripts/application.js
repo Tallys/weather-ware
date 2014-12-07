@@ -27,7 +27,6 @@
 $(document).ready(function() {
 	$(".search-form").on("submit", function (e) {
 		e.preventDefault();
-		console.log(e);
 		var city = $("#location_city").val();
 		var state = $("#location_state").val();
 		$.ajax({
