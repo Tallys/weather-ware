@@ -15,14 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-
-// $(document).ready(function() {
-//     $('thingToTouch').event(function() {
-//         $('thingToAffect').effect();
-//     });
-// });
-
-
 //takes the form, stops the form from the default submit action, and collects values from the form.
 $(document).ready(function() {
 	$(".search-form").on("submit", function (e) {
@@ -32,17 +24,26 @@ $(document).ready(function() {
 		$.ajax({
 			url : "http://api.wunderground.com/api/9f9665f04fbd9ca7/geolookup/conditions/q/"+state+"/"+city+".json",
 			dataType : "jsonp",
-			success : function(parsed_json) {
-				var location = parsed_json['location']['city'];
-				var temp_f = parsed_json['current_observation']['temp_f'];
-				$( "<h1>" ).text("Current temperature in " + location + " is: " + temp_f).appendTo( "body" );
-				//post request
+			success : function(weatherResponse) {
+				var location = weatherResponse['location']['city'];
+				var temp_f = weatherResponse['current_observation']['temp_f'];
+				$.ajax({
+					url: $("search.form").attr('action'),
+					type: "POST",
+					data: $(".search-form").serialize(),
+					success : function(data) {
+						console.log("i did it");
+						$( "<h1>" ).text("Current temperature in " + location + " is: " + temp_f).appendTo( ".api-result" );
+						$(".api-result").removeClass("hide");
+						$(".api-result").append($(data).html());
+					}
+				});
 			}
 		});
 
 	// comment ajax
-	});
 
+});
 
 });
 

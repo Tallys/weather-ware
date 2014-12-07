@@ -1,18 +1,10 @@
 <div class = "wrapper">
   <div class = "comment-page"> 
 
-      <% if Location.exists?(@location) %>
-      <div class = "api-result">
-        <h1> The weather for <%= @location.city %>, <%= @location.state %> is: </h1>
-      </div>
+      <div class = "api-result hide">
 
       <h2>what are people wearing in this weather?</h2>
 
-      <%= render @location.comments %>
-
-      <%= render 'comments/form' %>
-
-      <% end %>
-
+      </div>
     </div>
   </div>
