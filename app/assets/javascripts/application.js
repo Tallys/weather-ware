@@ -38,17 +38,9 @@ $(document).ready(function() {
 				$( "<h1>" ).text("Current temperature in " + location + " is: " + temp_f).appendTo( "body" );
 			}
 		})
-
-		// %.ajax ({
-		// 	url: '/',
-		// 	type: "POST",
-		// 	dataType: "json",
-		// 	success: function(parsed_json) {
-		// 		$( "<h1>" ).text( json.title ).appendTo( "body" );
-		// 		$( "<div class='content'>").html( json.html ).appendTo( "body" )
-		// 	}
-
-		// })
-	})
+	},
+	function() {
+    console.log( "<p> was clicked" );
+})
 });
 
