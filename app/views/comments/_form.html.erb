@@ -1,11 +1,11 @@
 <div class = "comment-form">
 	<h1>weather wear?</h1>
 	<%= form_for :comment, url: comment_url(id: @location) do |f| %>
-	<p>
+	<p class="comment-name">
 		<%= f.label :name %><br>
 		<%= f.text_field :commenter %>
 	</p>
-	<p>
+	<p class="comment-body">
 		<%= f.label :comment %><br>
 		<%= f.text_area :body %>
 	</p>

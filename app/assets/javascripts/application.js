@@ -36,11 +36,13 @@ $(document).ready(function() {
 				var location = parsed_json['location']['city'];
 				var temp_f = parsed_json['current_observation']['temp_f'];
 				$( "<h1>" ).text("Current temperature in " + location + " is: " + temp_f).appendTo( "body" );
+				//post request
 			}
-		})
-	},
-	function() {
-    console.log( "<p> was clicked" );
-})
+		});
+
+	// comment ajax
+	});
+
+
 });
 

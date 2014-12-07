@@ -31,29 +31,6 @@
 		color: $secondary-color;
 		text-align:center;
 	}
-
-	.comment-form {
-		background-color: lighten($light-gray, 7);
-		box-shadow: 0px 2px 2px 2px $light-gray;
-		padding: 2em;
-		border-radius: 7px;
-		margin-bottom: .5em;
-
-		@include media ($mediumish) {
-			margin-right: 2em;
-			margin-left: 2em;
-		}
-
-		@include media ($largish) {
-			margin-right: 6em;
-			margin-left: 6em;
-			margin-bottom: 1em;
-		}
-	}
-}
-
-.comment-display {
-	@extend .comment-form;
 }
 
 .location-form {
@@ -69,9 +46,5 @@
 
 .state-input {
 	display:block;
-	text-align:center;
-}
-
-.submit {
 	text-align:center;
 }
