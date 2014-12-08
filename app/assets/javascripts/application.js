@@ -28,7 +28,7 @@ $(document).ready(function() {
 				var location = weatherResponse['location']['city'];
 				var temp_f = weatherResponse['current_observation']['temp_f'];
 				$.ajax({
-					url: $("search.form").attr('action'),
+					url: $("search-form").attr('action'),
 					type: "POST",
 					data: $(".search-form").serialize(),
 					success : function(data) {
@@ -36,14 +36,50 @@ $(document).ready(function() {
 						$( "<h1>" ).text("Current temperature in " + location + " is: " + temp_f).appendTo( ".api-result" );
 						$(".api-result").removeClass("hide");
 						$(".api-result").append($(data));
+						$(".submit-comment").on("submit", function (e) {
+							e.preventDefault();
+						});
 					}
 				});
 			}
 		});
-
-	// comment ajax
-
+	});
 });
 
-});
+
+
+
+// $(".submit-form").on("submit", function (e) {
+// 	e.preventDefault();
+// 	var commenter = $("#comment_commenter").val();
+// 	var comment = $("#comment_comment").val();
+	// 	$.ajax({
+	// 		url: $("submit-form").attr('action'),
+	// 		type: "POST",
+	// 		data: $(".submit-form").serialize(),
+	// 		success : function(data) {
+	// 			console.log("i did it");
+	// 		}
+	// 		});
+
+// $(document).ready(function() {
+// 	$(".submit-form").on("submit", function (e) {
+// 		e.preventDefault();
+// 		var commenter = $("#comment_commenter").val();
+// 		var comment = $("#comment_comment").val();
+// 		$.ajax({
+// 			url: $("submit-form").attr('action'),
+// 			type: "POST",
+// 			data: $(".submit-form").serialize(),
+// 			success : function(data) {
+// 				console.log("i did it");
+// 				$("body").append($(data));
+// 			}
+
+// 		});
+// 	});
+
+// });
+
+
 

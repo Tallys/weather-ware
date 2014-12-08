@@ -3,7 +3,10 @@ class CommentsController < ApplicationController
 	def create
 		@location = Location.find(params[:id])
 		@comment = @location.comments.create(comment_params)
-		redirect_to root_url(location: @location)
+		respond_to do |format|
+			format.html { render :partial => "comments/form" }
+			format.js
+		end
 	
 	end
 

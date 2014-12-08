@@ -15,7 +15,7 @@
 
 <div class = "comment-form">
 	<h1>weather wear?</h1>
-	<%= form_for :comment, url: comment_url(id: @location) do |f| %>
+	<%= form_for :comment, url: comment_url(id: @location), html: {class: 'submit-comment'} do |f| %>
 	<p class="comment-name">
 		<%= f.label :name %><br>
 		<%= f.text_field :commenter %>
@@ -24,7 +24,7 @@
 		<%= f.label :comment %><br>
 		<%= f.text_area :body %>
 	</p>
-	<p class= "submit-form">
+	<p class= "submit">
 		<%= f.submit 'Submit' %>
 	</p>
 	<% end %>
