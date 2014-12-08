@@ -11,10 +11,7 @@ gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
 # Rails refactor gem for Heroku
-gem 'rails_12factor'
-
-#ruby gem and version
-gem ruby '2.0.0'
+gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
