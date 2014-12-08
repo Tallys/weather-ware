@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 		@location = Location.find(params[:id])
 		@comment = @location.comments.create(comment_params)
 		respond_to do |format|
-			format.html { render :partial => "comments/form" }
+			format.html { render :partial => "comments/comment",  locals: {comment: @comment} }
 			format.js
 		end
 	

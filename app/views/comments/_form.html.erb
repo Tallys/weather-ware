@@ -1,15 +1,7 @@
-	<% @location.comments.each do |comment| %>
-<div class= "comment-display">
-	<p>
-		<strong>Name:</strong>
-		<%= comment.commenter %>
-	</p>
+<% @location.comments.each do |comment| %>
 
-	<p>
-		<strong>Comment:</strong>
-		<%= comment.body %>
-	</p>
-</div>
+<%= render partial: "comments/comment", locals: {comment: comment}  %>
+
 <% end %>
 
 

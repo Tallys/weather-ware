@@ -36,14 +36,27 @@ $(document).ready(function() {
 						$( "<h1>" ).text("Current temperature in " + location + " is: " + temp_f).appendTo( ".api-result" );
 						$(".api-result").removeClass("hide");
 						$(".api-result").append($(data));
+						$('input[type="text"],textarea').val('');
 						$(".submit-comment").on("submit", function (e) {
 							e.preventDefault();
+							var commenter = $("#comment_commenter").val();
+							var comment = $("#comment_comment").val();
+							$.ajax({
+								url: $(".submit-comment").attr('action'),
+								type: "POST",
+								data: $(".submit-comment").serialize(),
+								success : function(data) {
+									console.log("it");
+									$(".api-result").append($(data));
+									$('input[type="text"],textarea').val('');
+								}
+							});
 						});
 					}
 				});
 			}
 		});
-	});
+});
 });
 
 
@@ -51,16 +64,16 @@ $(document).ready(function() {
 
 // $(".submit-form").on("submit", function (e) {
 // 	e.preventDefault();
-// 	var commenter = $("#comment_commenter").val();
-// 	var comment = $("#comment_comment").val();
-	// 	$.ajax({
-	// 		url: $("submit-form").attr('action'),
-	// 		type: "POST",
-	// 		data: $(".submit-form").serialize(),
-	// 		success : function(data) {
-	// 			console.log("i did it");
-	// 		}
-	// 		});
+// var commenter = $("#comment_commenter").val();
+// var comment = $("#comment_comment").val();
+// $.ajax({
+// 	url: $("submit-comment").attr('action'),
+// 	type: "POST",
+// 	data: $(".submit-form").serialize(),
+// 	success : function(data) {
+// 		console.log("i did it");
+// 	}
+// });
 
 // $(document).ready(function() {
 // 	$(".submit-form").on("submit", function (e) {
