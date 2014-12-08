@@ -25,13 +25,49 @@ p {
 	display: inline;
 }
 
-.api-result {	
+.api-result {
 
-	h1 {
-		font-size: 2em;
+	h2 {
+		margin-top: 2em;
+	}
+
+	.weather-result {
+		@include background-image(url("/images/temp-clouds3.jpg"));
+		background-position: center, center;
+		font-size: 2.5em;
+		text-align:center;
+		padding-top: 1em;
+		color: $mauve;
+		font-weight:bold;
+
+		@include media ($mediumish) {
+			font-size: 3em;
+		}
+
+		@include media ($largish) {
+			font-size: 3.5em;
+		}
+
+		.weather-icon {
+			text-align:center;
+			
+			img {
+				background-color: white;
+				border-radius: 50%;
+				margin-bottom: -30px;
+				box-shadow: 1px 1px 1px 1px $mauve;
+				@include transition(all .3s ease-in-out);
+
+				&:hover {
+				@include transform(scale(1.1) rotate(-7deg));
+				}
+			}
+			
+		}
+		
+
 	}
 }
-
 
 .submit {
 	text-align:center;
