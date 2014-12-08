@@ -15,12 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
-//takes the form, stops the form from the default submit action, and collects values from the form.
+// one the dom is loaded, stop default form events, read input values
+
 $(document).ready(function() {
 	$(".search-form").on("submit", function (e) {
 		e.preventDefault();
 		var city = $("#location_city").val();
 		var state = $("#location_state").val();
+		
+		//ajax request to the wunderground api with the state and city values from the form passed into the url
+
 		$.ajax({
 			url : "http://api.wunderground.com/api/9f9665f04fbd9ca7/geolookup/conditions/q/"+state+"/"+city+".json",
 			dataType : "jsonp",
@@ -29,6 +33,9 @@ $(document).ready(function() {
 				var temp_f = weatherResponse['current_observation']['temp_f'];
 				var weather = weatherResponse['current_observation']['weather'];
 				var icon_url = weatherResponse['current_observation']['icon_url'];
+				
+				// send post request using the forms' parameters, append info to HTML
+
 				$.ajax({
 					url: $("search-form").attr('action'),
 					type: "POST",
@@ -41,6 +48,9 @@ $(document).ready(function() {
 						$(".api-result").removeClass("hide");
 						$(".api-result").append($(data));
 						$('input[type="text"],textarea').val('');
+							
+						//prevent default action on submit comment form, read values, send ajax post request with form data, append data to HTML
+
 						$(".submit-comment").on("submit", function (e) {
 							e.preventDefault();
 							var commenter = $("#comment_commenter").val();

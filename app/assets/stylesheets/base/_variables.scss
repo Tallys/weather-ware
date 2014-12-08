@@ -1,11 +1,14 @@
 // Color Palette 
 
 $white : #fff;
-$blue: #4dabdf;
+$light-gray: #DDD;
+$gray : #808080;
+$medium-gray: #999;
+
 $light-blue: #89b6b7;
 $dark-blue: #5f838a;
 $blue: #4dabdf;
-$white : #fff;
+
 $dark-gray: #222;
 $medium-gray: #999;
 $light-gray: #DDD;
@@ -20,6 +23,13 @@ $primary-color-light: lighten(#6a8189, 27);
 $secondary-color: $mauve;
 $accent-color: $yellow;
 
+// Background Color
+$base-background-color: white;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $yellow;
+
 // Typography
 $sans-serif: $helvetica;
 $serif: $georgia;
@@ -33,22 +43,6 @@ $unitless-line-height: $base-line-height / ($base-line-height * 0 + 1);
 $header-line-height: $base-font-size * 1.25;
 $base-border-radius: em(7);
 
-$light-gray: #DDD;
-$gray : #808080;
-$medium-gray: #999;
-$dark-gray: #222;
-
-$light-red: #FBE3E4;
-$light-yellow: #FFF6BF;
-$light-green: #E6EFC2;
-
-// Background Color
-$base-background-color: white;
-
-// Font Colors
-$base-font-color: $dark-gray;
-$base-accent-color: $yellow;
-
 // Link Colors
 $base-link-color: $base-accent-color;
 $hover-link-color: darken($base-accent-color, 15);
@@ -58,11 +52,6 @@ $hover-button-color: $hover-link-color;
 // Border color
 $base-border-color: $light-gray;
 
-// Flash Colors
-$alert-color: $yellow;	
-$error-color: $light-red;
-$notice-color: $light-yellow;
-$success-color: $light-green;
 
 // Forms
 $form-border-color: $primary-color-light;

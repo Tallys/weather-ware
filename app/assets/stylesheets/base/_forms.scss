@@ -87,9 +87,7 @@ select {
     border-color: $form-border-color-focus;
     box-shadow: $form-box-shadow-focus;
   }
-
 }
-
 
 %button {
   -webkit-font-smoothing: antialiased;
@@ -119,4 +117,3 @@ input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap;
 }
-
