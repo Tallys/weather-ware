@@ -34,7 +34,9 @@ p {
 	.weather-result {
 		@include background-image(url("/images/temp-clouds3.jpg"));
 		background-position: center, center;
-		font-size: 2.5em;
+		font-size: 2em;
+		padding-left: .5em;
+		padding-right: .5em;
 		text-align:center;
 		padding-top: 1em;
 		color: $secondary-color;
