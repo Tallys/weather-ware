@@ -1,4 +1,7 @@
-// Colors
+// Color Palette 
+
+$white : #fff;
+$blue: #4dabdf;
 $light-blue: #89b6b7;
 $dark-blue: #5f838a;
 $blue: #4dabdf;
@@ -26,13 +29,9 @@ $header-font-family: $base-font-family;
 // Sizes
 $base-font-size: 1em;
 $base-line-height: $base-font-size * 1.5;
-$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
+$unitless-line-height: $base-line-height / ($base-line-height * 0 + 1); 
 $header-line-height: $base-font-size * 1.25;
 $base-border-radius: em(7);
-
-// Colors
-$white : #fff;
-$blue: #4dabdf;
 
 $light-gray: #DDD;
 $gray : #808080;

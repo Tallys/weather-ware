@@ -27,16 +27,17 @@ $(document).ready(function() {
 			success : function(weatherResponse) {
 				var location = weatherResponse['location']['city'];
 				var temp_f = weatherResponse['current_observation']['temp_f'];
-				var icon = weatherResponse['current_observation']['icon'];
+				var weather = weatherResponse['current_observation']['weather'];
 				var icon_url = weatherResponse['current_observation']['icon_url'];
 				$.ajax({
 					url: $("search-form").attr('action'),
 					type: "POST",
 					data: $(".search-form").serialize(),
 					success : function(data) {
+						$(".api-result").empty(".api-result");
 						$( "<div class= 'weather-result'>" ).html("It's " + temp_f +  "&deg; in " + location + " right now").prependTo( ".api-result" );
 						$("<div class= 'weather-icon')>").html("<img src =" + icon_url +">").appendTo(".weather-result");
-						$("<h2>").html("It's " + icon + ", what are people wearing in this weather?").appendTo(".api-result");
+						$("<h2>").html("Forecast: " + weather + ". What are people wearing in this weather?").appendTo(".api-result");
 						$(".api-result").removeClass("hide");
 						$(".api-result").append($(data));
 						$('input[type="text"],textarea').val('');
@@ -56,7 +57,7 @@ $(document).ready(function() {
 						});
 					}
 				});
-			}
-		});
+}
+});
 });
 });

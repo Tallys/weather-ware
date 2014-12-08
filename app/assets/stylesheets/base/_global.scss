@@ -37,7 +37,7 @@ p {
 		font-size: 2.5em;
 		text-align:center;
 		padding-top: 1em;
-		color: $mauve;
+		color: $secondary-color;
 		font-weight:bold;
 
 		@include media ($mediumish) {
@@ -54,6 +54,8 @@ p {
 			img {
 				background-color: white;
 				border-radius: 50%;
+				padding: 5px;
+				height: 60px;
 				margin-bottom: -30px;
 				box-shadow: 1px 1px 1px 1px $mauve;
 				@include transition(all .3s ease-in-out);
@@ -61,11 +63,8 @@ p {
 				&:hover {
 				@include transform(scale(1.1) rotate(-7deg));
 				}
-			}
-			
+			}	
 		}
-		
-
 	}
 }
 

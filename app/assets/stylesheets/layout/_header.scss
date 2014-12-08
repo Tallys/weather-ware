@@ -5,7 +5,7 @@ header {
 	background-repeat: no-repeat;
 	text-align:center;
 	padding-top: .5em;
-	padding-bottom: .5em;
+	// padding-bottom: .5em;
 
 	@include media($mediumish) {
 		padding-bottom:4em;
@@ -15,7 +15,7 @@ header {
 	@include media($largish) {
 		padding-bottom:5em;
 		padding-top:2em;
-		margin-bottom: 1em;
+		margin-bottom: 1.5em;
 	}
 
 	hr { 
@@ -54,6 +54,7 @@ header {
 	
 	a {
 		text-decoration:none;
+		
 		.main-title {
 
 			margin:0;	
